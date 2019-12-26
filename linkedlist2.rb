@@ -60,7 +60,7 @@ class Stack
     end
 end
 
-def reverse_list(list)
+def stack_reverse_list(list)
   # Steps:
 
   # 1: make an empty stack
@@ -74,6 +74,32 @@ def reverse_list(list)
    return stack.data  
 end
 
+
+def mutation_reverse_list(list)
+  # Steps:
+  # 1: Have a empty list to reverse into (RL)
+  reversed_list = nil
+  #print_values(reversed_list)
+  # 2: Consume the nodes of the old list by moving top node to the top of RL
+  while list
+    # swapping code
+    head = list 
+    second = list.next_node
+    head.next_node = reversed_list #new_reversed_list = head + reversed_list
+    reversed_list = head
+    list = second
+    #print_values(reversed_list)
+  end
+  # 3: return the reversed list
+  return reversed_list
+end
+
+
+
+
+
+
+
   node1 = LinkedListNode.new(37)
   node2 = LinkedListNode.new(99, node1)
   node3 = LinkedListNode.new(12, node2)
@@ -84,5 +110,5 @@ print_values(node3)
 
 puts "_________"
 
-revlist = reverse_list(node3)
+revlist = mutation_reverse_list(node3)
 print_values(revlist)

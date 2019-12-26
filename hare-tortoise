@@ -1,0 +1,19 @@
+tortoise := firstNode
+hare := firstNode
+
+forever:
+
+if hare == end
+return 'No Loop Found'
+
+hare := hair.next
+
+if hare == end
+return 'No Loop Found'
+
+hare = hare.next
+tortoise = tortoise.next
+
+if hare == tortoise
+return 'Loop Found'
+
